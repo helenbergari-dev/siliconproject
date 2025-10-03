@@ -72,20 +72,29 @@ body {
 .store-buttons img { height: 50px; }
 .hero-right img { width: 460px; max-width: 100%; height: auto; }
 
+.brands {
+  margin-top: -40px;
+}
 
-.brands { margin-top: -40px; }
-.brands .container { display: block; }
-.brand-list {
+.brands .container {
+  display: block;
+  max-width: 1296px; 
+  margin: 0 auto;    
+}
+
+.brands .brand-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 196px); 
   gap: 24px;
+  justify-content: center;
 }
-.brand-item {
-  width: 100%;
-  height: 84px;
+
+.brands .brand-item {
+  width: 196px;
+  height: 100px;
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -93,14 +102,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.brand-item img {
-  height: 28px;
-  max-width: 120px;
-  opacity: 0.9;
-  filter: grayscale(100%);
+  overflow: hidden; 
 }
 
+.brands .brand-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  opacity: 0.9;
+  filter: grayscale(100%);
+  display: block;
+}
+
+.brands .brand-item:last-child img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.35);     
+  transform-origin: center;
+  will-change: transform;
+}
 
 .features { padding: 120px 0; }
 .features-row {
